@@ -3,8 +3,11 @@ import { useFonts, Roboto_400Regular, Roboto_500Medium, Roboto_700Bold } from '@
 import { NativeBaseProvider, StatusBar } from "native-base";
 
 import { AuthContextProvider } from './src/contexts/AuthContext';
-import { Loading } from './src/components/loading';
+import { Loading } from './src/components/Loading';
 import { SignIn } from './src/screens/SignIn';
+import { New } from './src/screens/New';
+import { Find } from './src/screens/Find';
+import { Pools } from './src/screens/Pools';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_500Medium, Roboto_700Bold });
@@ -18,7 +21,7 @@ export default function App() {
           translucent
         />
         {
-          fontsLoaded ? <SignIn /> : <Loading />
+          fontsLoaded ? <Pools /> : <Loading />
         }
       </AuthContextProvider>
     </NativeBaseProvider>
